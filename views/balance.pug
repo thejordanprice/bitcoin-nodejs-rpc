@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1 Bitcoin Balance Checker
+    form(action='/address/#{address}', method='get')
+      label(for='address') Address:
+      input(type='text', name='address', id='address', value=`${address}`)
+      button(type='submit') Check Balance
+    if balance
+      p The balance of address #{address} is #{balance} BTC.
+    else if error
+      p There was an error: #{error}

@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h2 Bitcoin Key Generator
+    form(action='/keys', method='get')
+      button(type='submit') Generate New Keys
+    if address && privateKey
+      h2 Your new Bitcoin keys are:
+      p Address: #{address}
+      p Private Key: #{privateKey}
+      if balance !== undefined
+        p Balance: #{balance} BTC
+    else if error
+      p There was an error: #{error}

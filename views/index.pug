@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h2 Enter a Bitcoin address to check its balance:
+  form(action='/address/' + address, method='get')
+    label(for='address') Address:
+    input(type='text', name='address', id='address')
+    button(type='submit') Check Balance
